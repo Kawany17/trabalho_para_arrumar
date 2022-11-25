@@ -7,7 +7,7 @@
         $login = $_POST['bt_login'];
         $senha = password_hash ($_POST['bt_senha'], PASSWORD_DEFAULT);
 
-        $deu_certo = $mysqli->query("INSERT INTO atividade_alunos_sesc (nome, senha) VALUES ('$login', '$senha')") or die ($mysqli->error);
+        $deu_certo = $mysqli->query("INSERT INTO adm_login (nome, senha) VALUES ('$login', '$senha')") or die ($mysqli->error);
 
         if($deu_certo){
             $_SESSION['resultado'] = "<div class='alert alert-success'>Administrador cadastro com sucesso!!!</div>";

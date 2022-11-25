@@ -3,7 +3,7 @@
     if(isset($_POST['bt_login'])){ 
         $login = $_POST['bt_login'];
         $senha = $_POST['bt_senha'];
-        $sql = "SELECT * FROM  atividade_alunos_sesc WHERE nome =  '$login' limit 1";
+        $sql = "SELECT * FROM  adm_login WHERE nome =  '$login' limit 1";
         $sql_exec = $mysqli->query($sql) or die ($mysqli->error);
         $usuario = $sql_exec->fetch_assoc();
         
