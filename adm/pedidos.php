@@ -2,7 +2,7 @@
     include ("conexao.php");
     require ("../autenticacao.php");
 
-    $selecionar_sql = "SELECT * FROM atividade_alunos_sesc";
+    $selecionar_sql = "SELECT * FROM adm_login";
 
     $retorno_consulta = $mysqli->query( $selecionar_sql) or die($mysqli->error);
     $quantidade_pedidos = $retorno_consulta->num_rows; // Retornar quantidade de linhas

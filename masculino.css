@@ -21,7 +21,7 @@ ul {
 }
 
 header {
-    background-color: rgb(248, 36, 248);
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
     align-items:center;   
@@ -30,14 +30,14 @@ header {
 
 form input {
     width: 20rem;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 10px 15px;
     border: none;
     border-radius: 10px 0px 0px 10px;  
 }
 
 form button {
-    background-color: rgba(34, 34, 209, 0.888);
+    background-color: rgba(60, 209, 34, 0.888);
     border: none;
     border-radius: 0px 10px 10px 0px;
     background-size: 100%;
@@ -55,13 +55,13 @@ button:hover {
 }
 
 .menu {
-    color: #000000;
+    color: #7e0000;
     transition: 500ms;
     font-weight: 400;
 }
 
 .menu:hover {
-    color: #000000;
+    color: #ffffff;
     transition: 500ms;
     background-color: rgba(34, 157, 209, 0.888);
     border-radius: 10px;
@@ -71,7 +71,7 @@ button:hover {
 /* Filtro */
 
 nav {
-    background-color: rgb(237, 233, 127);
+    background-color: rgb(255, 255, 255);
     padding: 15px;
 }
 
@@ -88,7 +88,7 @@ nav ul a {
 }
 
 nav ul a:hover {
-    color: #000000;
+    color: #ffffff;
     transition: 500ms;
     background-color: #9e7504;
     border-radius: 10px;
@@ -123,7 +123,7 @@ nav ul a:hover {
 }
 
 a:link, a:visited, a:active {
-    color: #113c4a;
+    color: #ffffff;
 }
 
 /* FILTRAR */
@@ -146,7 +146,7 @@ footer ul a {
 }
 
 footer a:hover {
-    color: #000000;
+    color: #ffffff;
     transition: 500ms;
     background-color: #9e7504;
     border-radius: 10px;

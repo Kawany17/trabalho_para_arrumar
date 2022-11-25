@@ -39,7 +39,7 @@
                 <li>
                     <form action="../contato.php" method="get">
 
-                        <button type="submit">comprar online</button>
+                        <button type="submit">Contato</button>
                     </form> 
                 </li>
                 </ul>

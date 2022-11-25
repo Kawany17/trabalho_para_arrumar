@@ -7,7 +7,7 @@
     
     if(isset($_GET['id'])){
         $id_pedido = $_GET['id'];
-        $selecionar_pedido = "SELECT * FROM atividade_alunos_sesc WHERE id_pedido = $id_pedido ";
+        $selecionar_pedido = "SELECT * FROM produto WHERE id_pedido = $id_pedido ";
         $retorno_consulta = $mysqli->query( $selecionar_pedido) or die($mysqli->error);
         $pedido = $retorno_consulta -> fetch_assoc();
     }    

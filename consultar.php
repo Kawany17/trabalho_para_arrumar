@@ -1,7 +1,7 @@
 <?php
     include("conexao.php");
 
-    $consultar_sql = "SELECT * FROM contato_projeto"; 
+    $consultar_sql = "SELECT * FROM atividade_alunos_sesc"; 
     $retorno_consulta = $mysqli->query( $consultar_sql) or die($mysqli->error);
     $quantidade_mensagens = $retorno_consulta->num_rows; // Retornar quantidade de linhas
 ?>
