@@ -1,6 +1,6 @@
 <?php
     include ("conexao.php");
-    require ("../autenticacao.php");
+   require ("../autenticacao.php");
 ?>
 
 <!DOCTYPE html>
