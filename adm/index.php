@@ -21,13 +21,11 @@
     <body>
         <?php include("menu.php") ?>
         <div class="container">
-            <br>
-            <h2>Pedidos</h2>
-            <h4>Consultar Pedidos <a class="btn btn-warning" href="pedidos.php" target="_blank">Acessar</a></h4>
-            
+            <br> 
             <hr>
             <h2>ADM - LOGIN</h2>
             <h4>Cadastrar ADM - Login <a class="btn btn-warning" href="cadastrar_login.php" target="_blank">Acessar</a></h4>
+            <h4>Consultar ADM - Login <a class="btn btn-warning" href="consultar_login.php" target="_blank">Acessar</a></h4>
            
           
         </div>

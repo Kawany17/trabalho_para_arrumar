@@ -1,41 +1,42 @@
 <?php
     include ("conexao.php");
-    require ("../autenticacao.php");
+    //require ("../autenticacao.php");
+    
     if(!isset($_SESSION)){
         session_start();
     }    
     
     if(isset($_GET['id'])){
-        $id_pedido = $_GET['id'];
-        $selecionar_pedido = "SELECT * FROM produto WHERE id_pedido = $id_pedido ";
+        $id_adm = $_GET['id'];
+        $selecionar_pedido = "SELECT * FROM adm_login WHERE id_login_adm = $id_adm";
         $retorno_consulta = $mysqli->query( $selecionar_pedido) or die($mysqli->error);
-        $pedido = $retorno_consulta -> fetch_assoc();
+        $login = $retorno_consulta -> fetch_assoc();
     }    
     
-    if (isset($_POST['bt_nome'])){
 
-        $nome = $_POST["bt_nome"];
-        $email = $_POST["bt_email"];
-        $produto = $_POST["bt_produto"];        
-        $pedido = $_POST["bt_pedido"];        
+    if (isset($_POST['bt_login'])){
+
+        $login = $_POST["bt_login"];
+        $senha = $_POST["bt_senha"];
+            
 
         
-        $sql_code = "UPDATE pedido
-        SET nome = '$nome', 
-        email = '$email',
-        produto = '$produto',
-        pedido = '$pedido'        
-        WHERE id_pedido = '$id_pedido'";
+        $sql_code = "UPDATE adm_login
+        SET nome = '$login', 
+        senha = '$senha'           
+        WHERE id_login_adm = '$id_adm'";
 
         $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
 
+        
         if($deu_certo) {
-            $selecionar_pedido = "SELECT * FROM pedido WHERE id_pedido = $id_pedido ";
+            $selecionar_pedido = "SELECT * FROM adm_login WHERE id_login_adm = $id_adm ";
             $retorno_consulta = $mysqli->query( $selecionar_pedido) or die($mysqli->error);
-            $pedido = $retorno_consulta -> fetch_assoc();
+            $login = $retorno_consulta -> fetch_assoc();
             $_SESSION['resultado'] = "<div class='alert alert-success'>Pedido alterado </div>";
             unset($_POST);            
         }
+        
     }
    
 ?>
@@ -57,26 +58,18 @@
         <?php include("menu.php") ?>
         <div class="container">
             <form class="form-horizontal" method="post">
-                <h1>Identificador: <?php echo $id_pedido; ?></h1>
+                <h1>Identificador: <?php echo $login['id_login_adm']; ?></h1>
                 <div class="mb-3"> 
-                    <label class="form-label" for="">Nome:</label>                   
-                    <input type="text" class="form-control" placeholder="Digite o seu nome" name="bt_nome"  value="<?php echo $pedido['nome']; ?>" required>
+                    <label class="form-label" for="">Login:</label>                   
+                    <input type="text" class="form-control" placeholder="Digite o seu nome" name="bt_login"  value="<?php echo $login['nome']; ?>" required>
                 </div>
                 
                 <div class="mb-3">
-                    <label class="form-label" for="">Email:</label>                  
-                    <input type="text" class="form-control" placeholder="Digite o seu email" name="bt_email" value="<?php echo $pedido['email']; ?>" required>
+                    <label class="form-label" for="">Senha:</label>                  
+                    <input type="text" class="form-control" placeholder="Digite o seu email" name="bt_senha" value="<?php echo $login['senha']; ?>" required>
                 </div>
-
-                <div class="mb-3">
-                    <label class="form-label" for="">Produto:</label>                                      
-                    <input type="text" class="form-control" name="bt_produto" value="<?php echo $pedido['produto']; ?>" required>
-                </div>
+               
                 
-                <div class="mb-3">
-                    <label class="form-label" for="">Pedido:</label>                                      
-                    <textarea class="form-control" rows="3"  placeholder="Digite o seu tamanho..." name="bt_pedido" required><?php echo $pedido['pedido']; ?></textarea>
-                </div> 
                 <?php
                     if(isset($_SESSION['resultado'])){
                         echo $_SESSION['resultado']; 
@@ -84,7 +77,7 @@
                     }
                 ?>
                 <input class="btn btn-primary" type="submit" value="Alterar">
-                <a class="btn btn-danger" href="pedidos.php">Voltar</a>                
+                <a class="btn btn-danger" href="consultar_login.php">Voltar</a>                
             </form>
         </div>
     </body>
